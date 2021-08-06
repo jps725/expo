@@ -2,18 +2,13 @@ import React from "react";
 import {
   CssBaseline,
   Avatar,
-  Button,
-  TextField,
-  FormControlLabel,
-  Checkbox,
-  Link,
   Paper,
-  Box,
   Grid,
   Typography,
 } from "@material-ui/core";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import { makeStyles } from "@material-ui/core/styles";
+import LoginForm from "../auth/LoginForm";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -63,7 +58,9 @@ export default function SplashSignIn() {
           <Typography component="h1" variant="h5">
             Sign In
           </Typography>
-          <form className={classes.form} noValidate>
+
+          <LoginForm />
+          {/* <form className={classes.form} noValidate>
             <TextField
               variant="outlined"
               margin="normal"
@@ -98,8 +95,8 @@ export default function SplashSignIn() {
               className={classes.submit}
             >
               Sign In
-            </Button>
-            <Grid container>
+            </Button> */}
+          {/* <Grid container>
               <Grid item xs>
                 <Link href="#" variant="body2">
                   Forgot Password?
@@ -111,7 +108,8 @@ export default function SplashSignIn() {
                 </Link>
               </Grid>
             </Grid>
-          </form>
+            </form>
+            */}
         </div>
       </Grid>
     </Grid>
