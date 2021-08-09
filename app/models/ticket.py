@@ -1,5 +1,5 @@
 from .db import db
-from datetime import datetime, timezone
+from sqlalchemy.sql import func
 
 
 class Ticket(db.Model):
@@ -10,10 +10,10 @@ class Ticket(db.Model):
         "kitchens.id"), nullable=False)
     table_number = db.Column(db.Integer, nullable=False)
     server_name = db.Column(db.String(100), nullable=False)
-    start_time = db.Column(
-        db.TimeStamp(), default=datetime.now(timezone.utc), nullable=False)
-    end_time = db.Column(db.TimeStamp())
-    send_time = db.Column(db.TimeStamp())
+    start_time = db.Column(db.DateTime(timezone=True),
+                           server_default=func.now(), nullable=False)
+    end_time = db.Column(db.DateTime(timezone=True))
+    send_time = db.Column(db.DateTime(timezone=True))
     active = db.Column(db.Boolean, default=True)
 
     kitchen = db.relationship("Kitchen", back_populates="tickets")

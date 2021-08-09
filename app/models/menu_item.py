@@ -8,7 +8,7 @@ class Menu_Item(db.Model):
     item_name = db.Column(db.String(255), nullable=False)
     station_id = db.Column(db.Integer, db.ForeignKey(
         "stations.id"), nullable=False)
-    fire_time_seconds = db.Column(db.Integer, nullabe=False)
+    fire_time_seconds = db.Column(db.Integer, nullable=False)
     active = db.Column(db.Boolean, default=False)
 
     station = db.relationship("Station", back_populates="menu_items")
