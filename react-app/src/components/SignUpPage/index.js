@@ -2,9 +2,7 @@ import React from "react";
 import { CssBaseline, Paper, Grid, Typography } from "@material-ui/core";
 
 import { makeStyles } from "@material-ui/core/styles";
-import LoginForm from "../auth/LoginForm";
-
-import { useParams } from "react-router-dom";
+import SignUpForm from "../auth/SignUpForm";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -41,7 +39,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SplashSignIn() {
   const classes = useStyles();
-  const form = useParams();
 
   return (
     <Grid container component="main" className={classes.root}>
