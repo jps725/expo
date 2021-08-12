@@ -13,7 +13,7 @@ class Ticket_Menu_Item_Join(db.Model):
 
     ticket = db.relationship("Ticket", back_populates="ticket_menu_item_joins")
     menu_item = db.relationship(
-        "Menu_Item", back_populates="ticket_menu_joins")
+        "Menu_Item", back_populates="ticket_menu_item_joins")
 
     def to_dict(self):
         return {

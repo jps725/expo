@@ -12,7 +12,11 @@ class Kitchen(db.Model):
 
     user = db.relationship("User", back_populates="kitchens")
     service_type = db.relationship(
-        "Service_Type", back_populates="service_types")
+        "Service_Type", back_populates="kitchens")
+    stations = db.relationship("Station", back_populates="kitchen")
+    kitchen_image_joins = db.relationship(
+        "Kitchen_Image_Join", back_populates="kitchen")
+    tickets = db.relationship("Ticket", back_populates="kitchen")
 
     def to_dict(self):
         return {

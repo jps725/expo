@@ -12,6 +12,10 @@ class Menu_Item(db.Model):
     active = db.Column(db.Boolean, default=False)
 
     station = db.relationship("Station", back_populates="menu_items")
+    menu_item_image_joins = db.relationship(
+        "Menu_Item_Image_Join", back_populates="menu_item")
+    ticket_menu_item_joins = db.relationship(
+        "Ticket_Menu_Item_Join", back_populates="ticket")
 
     def to_dict(self):
         return{

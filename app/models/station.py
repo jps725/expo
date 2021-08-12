@@ -11,6 +11,9 @@ class Station(db.Model):
     active = db.Column(db.Boolean, default=False)
 
     kitchen = db.relationship("Kitchen", back_populates="stations")
+    menu_items = db.relationship("Menu_Item", back_populates="station")
+    station_image_joins = db.relationship(
+        "Station_Image_Join", back_populates="station")
 
     def to_dict():
         return{

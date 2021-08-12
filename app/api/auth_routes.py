@@ -62,6 +62,7 @@ def sign_up():
     """
     form = SignUpForm()
     form['csrf_token'].data = request.cookies['csrf_token']
+    print("----------", form['csrf_token'].data)
     if form.validate_on_submit():
         user = User(
             restaurant_name=form.data['restaurantName'],

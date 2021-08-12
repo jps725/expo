@@ -8,6 +8,9 @@ class Service_Type(db.Model):
     name = db.Column(db.String(100), nullable=False)
     service_speed = db.Column(db.Integer, nullable=False)
 
+    kitchens = db.relationship(
+        "Kitchen", back_populates="service_type")
+
     def to_dict(self):
         return {
             "id": self.id,

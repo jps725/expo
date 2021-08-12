@@ -17,6 +17,8 @@ class Ticket(db.Model):
     active = db.Column(db.Boolean, default=True)
 
     kitchen = db.relationship("Kitchen", back_populates="tickets")
+    ticket_menu_item_joins = db.relationship(
+        "Ticket_Menu_Item_Join", back_populates="ticket")
 
     def to_dict(self):
         return {
