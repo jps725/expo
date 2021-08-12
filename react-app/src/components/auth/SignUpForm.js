@@ -72,44 +72,73 @@ const SignUpForm = () => {
             <div> {error} </div>
           ))}
         </div>
-        <div>
-          <label>User Name</label>
-          <input
-            type="text"
-            name="restaurantName"
-            onChange={updateRestaurantName}
-            value={restaurantName}
-          ></input>
-        </div>
-        <div>
-          <label>Email</label>
-          <input
-            type="text"
-            name="email"
-            onChange={updateEmail}
-            value={email}
-          ></input>
-        </div>
-        <div>
-          <label>Password</label>
-          <input
-            type="password"
-            name="password"
-            onChange={updatePassword}
-            value={password}
-          ></input>
-        </div>
-        <div>
-          <label>Repeat Password</label>
-          <input
-            type="password"
-            name="repeat_password"
-            onChange={updateRepeatPassword}
-            value={repeatPassword}
-            required={true}
-          ></input>
-        </div>
-        <button type="submit">Sign Up</button>
+
+        <TextField
+          variant="outlined"
+          margin="normal"
+          required
+          fullWidth
+          id="restaurantName"
+          label="Restaurant Name"
+          name="restaurantName"
+          autoFocus
+          onChange={updateRestaurantName}
+          value={restaurantName}
+        />
+        <TextField
+          variant="outlined"
+          margin="normal"
+          required
+          fullWidth
+          id="email"
+          label="Email"
+          name="email"
+          autoComplete="email"
+          autoFocus
+          onChange={updateEmail}
+          value={email}
+        />
+        <TextField
+          variant="outlined"
+          margin="normal"
+          required
+          fullWidth
+          type="password"
+          label="Password"
+          name="password"
+          id="password"
+          onChange={updatePassword}
+          value={password}
+        />
+        <TextField
+          variant="outlined"
+          margin="normal"
+          required
+          fullWidth
+          type="password"
+          label="Repeat Password"
+          name="repeatPassword"
+          id="repeatPassword"
+          onChange={updateRepeatPassword}
+          value={repeatPassword}
+        />
+        <Button
+          type="submit"
+          fullWidth
+          variant="contained"
+          color="primary"
+          className={classes.submit}
+        >
+          Sign Up
+        </Button>
+
+        <Grid container>
+          <Grid item xs>
+            <Link href="/" variant="body2">
+              {"Already have an account? Sign In"}
+            </Link>
+          </Grid>
+        </Grid>
       </form>
     </div>
   );

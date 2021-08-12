@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
     height: "100vh",
   },
   image: {
-    backgroundImage: "url(https://i.ibb.co/tDxMY8x/kitchen-expo-1.jpg)",
+    backgroundImage: "url(https://i.ibb.co/pZc57ys/kitchen-expo-2.jpg)",
     backgroundRepeat: "no-repeat",
     backgroundColor:
       theme.palette.type === "light"
@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SplashSignIn() {
+export default function SignUpPage() {
   const classes = useStyles();
 
   return (
@@ -49,7 +49,7 @@ export default function SplashSignIn() {
           <Typography component="h1" variant="h5">
             expo # logo#
           </Typography>
-          <LoginForm />
+          <SignUpForm />
         </div>
       </Grid>
     </Grid>
